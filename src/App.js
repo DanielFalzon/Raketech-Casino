@@ -1,12 +1,25 @@
+import{ BrowserRouter as Router, Route } from "react-router-dom";
 import React from 'react';
-import Button from "react-bootstrap/Button";
+import Header from './GroupComponents/Header'
 import './App.scss';
+import Home from './Views/Home';
+import About from './Views/About';
+import Switch from "react-bootstrap/esm/Switch";
 
 function App() {
   return (
     <div className="App">
-      <Button variant="primary">primary</Button>
-      <Button variant="secondary">secondary</Button>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

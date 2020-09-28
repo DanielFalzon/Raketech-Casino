@@ -1,0 +1,28 @@
+/* poppins-regular - latin */
+/* poppins-regular - latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../resources/fonts/poppins-v13-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Poppins Regular'), local('Poppins-Regular'),
+         url('../resources/fonts/poppins-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../resources/fonts/poppins-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../resources/fonts/poppins-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../resources/fonts/poppins-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../resources/fonts/poppins-v13-latin-regular.svg#Poppins') format('svg'); /* Legacy iOS */
+  }
+
+$font-family-sans-serif: 'Poppins', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-base: 'Poppins';
+
+$theme-colors: (
+    "primary": #E75118,
+    "primary-light": #ec612c,
+    "secondary": #FFC200
+);
+
+
+
+
+
