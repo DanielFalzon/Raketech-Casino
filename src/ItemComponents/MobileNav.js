@@ -7,9 +7,6 @@ import MobileNavMenu from "./MobileNavMenu";
 function MobileNav() {
   const [showMenu, setShowMenu] = useState(false);
 
-  {/*
-    Create mixin to address z-index and css componenents for the nav items.
-  */}
   const menuTransitions = useTransition(showMenu, null, {
     from: { opacity: 0, transform: "translateX(100%)", zIndex: 50 },
     enter: { opacity: 1, transform: "translateX(0%)", zIndex: 50 },

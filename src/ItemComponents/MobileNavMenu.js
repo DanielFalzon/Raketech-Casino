@@ -1,24 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function MobileNavMenu(props) {
+  const location = useLocation();
+
   return (
     <ul className="list-group list-group-flush">
       <li className="bg-transparent list-group-item">
         <Link
           onClick={props.closeMenu}
           to="/"
-          className="py-3 text-white d-block text-center"
+          className={`nav-link py-3 d-block text-center ${
+            location.pathname === "/" ? "text-secondary" : " text-white"
+          }`}
         >
           Home
         </Link>
       </li>
-
-      <li className="bg-transparent list-group-item">
+      <li className="bg-transparent list-group-item ">
         <Link
           onClick={props.closeMenu}
           to="/about"
-          className="py-3 text-white d-block text-center"
+          className={`nav-link py-3 text-white d-block text-center ${
+            location.pathname === "/about" ? "text-secondary" : " text-white"
+          }`}
         >
           About
         </Link>
@@ -28,7 +33,9 @@ function MobileNavMenu(props) {
         <Link
           onClick={props.closeMenu}
           to="/contact-us"
-          className="py-3 text-white d-block text-center"
+          className={`nav-link py-3 text-white d-block text-center ${
+            location.pathname === "/contact-us" ? "text-secondary" : " text-white"
+          }`}
         >
           Contact Us
         </Link>

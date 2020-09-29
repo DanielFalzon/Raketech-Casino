@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Navbar, NavbarBrand } from "react-bootstrap";
 
 function DesktopNav() {
+  const location = useLocation();
+
   return (
     <div>
       <Navbar className="bg-secondary p-4">
@@ -16,14 +18,14 @@ function DesktopNav() {
         </NavbarBrand>
 
         <Navbar.Collapse className="justify-content-end font-weight-bolder">
-          <Navbar.Text className="px-4 active border-bottom border-primary">
-            <Link to="/" style={{textDecoration: 'none'}}>HOME</Link>
+          <Navbar.Text className="px-4 ">
+            <Link to="/" style={{textDecoration: 'none'}} className={`${location.pathname==='/'? "active-link": ""}`}>HOME</Link>
           </Navbar.Text>
           <Navbar.Text className="px-4">
-            <Link to="/about" style={{textDecoration: 'none'}}>ABOUT US</Link>
+            <Link to="/about" style={{textDecoration: 'none'}} className={`${location.pathname==='/about'? "active-link": ""}`}>ABOUT US</Link>
           </Navbar.Text>
           <Navbar.Text className="pl-4">
-            <Link to="/contact-us" style={{textDecoration: 'none'}}>CONTACT US</Link>
+            <Link to="/contact-us" style={{textDecoration: 'none'}} className={`${location.pathname==='/contact-us'? "active-link": ""}`}>CONTACT US</Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Navbar>

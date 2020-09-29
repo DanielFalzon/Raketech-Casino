@@ -16,10 +16,13 @@
 $font-family-sans-serif: 'Poppins', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-base: 'Poppins';
 
+$primary: #E75118;
+$secondary: #FFC200;
+
 $theme-colors: (
-    "primary": #E75118,
+    "primary": $primary,
     "primary-light": #ec612c,
-    "secondary": #FFC200
+    "secondary": $secondary
 );
 
 

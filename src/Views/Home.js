@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
+import HomeBanner from "../GroupComponents/HomeBanner"
 
 function Home() {
-    return (
-        <div>
-            {/*
-            <Banner />
-            <Table />
-            */}
-            The home page.
-        </div>
-    )
+  return (
+    <div>
+      <HomeBanner />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
