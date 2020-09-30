@@ -2,9 +2,12 @@ import{ BrowserRouter as Router, Route } from "react-router-dom";
 import React from 'react';
 import Header from './GroupComponents/Header'
 import './App.scss';
+import Switch from "react-bootstrap/esm/Switch";
+
 import Home from './Views/Home';
 import About from './Views/About';
-import Switch from "react-bootstrap/esm/Switch";
+import CasinoReview from './Views/CasinoReview';
+import ContactUs from './Views/ContactUs';
 
 function App() {
   return (
@@ -17,6 +20,12 @@ function App() {
           </Route>
           <Route exact path="/about">
             <About />
+          </Route>
+          <Route exact path="/casino-review/:id">
+            <CasinoReview />
+          </Route>
+          <Route exact path="/contact-us">
+            <ContactUs />
           </Route>
         </Switch>
       </Router>

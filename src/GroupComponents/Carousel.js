@@ -21,7 +21,7 @@ export default class Carousel extends Component {
     Axios.get("http://localhost:8000/wp-json/wp/v2/casino").then((res) =>
       this.setState({
         isLoaded: true,
-        casinos: res.data
+        casinos: res.data,
       })
     );
   }
@@ -43,38 +43,38 @@ export default class Carousel extends Component {
     return filteredCasinos;
   }
 
-  changeCards(dir){
-    const {activeIndex} = this.state;
-    switch(dir){
-        case "next":
-            let newFirstIndex = this.state.firstIndex - 1;
+  changeCards(dir) {
+    const { activeIndex } = this.state;
+    switch (dir) {
+      case "next":
+        let newLastIndex = this.state.lastIndex + 1;
 
-            if(newFirstIndex < 0){
-                newFirstIndex = this.state.casinos.length -1;
-            }
+        if (newLastIndex > this.state.casinos.length - 1) {
+          newLastIndex = 0;
+        }
 
-            this.setState({
-                firstIndex: newFirstIndex,
-                lastIndex: this.state.activeIndex,
-                activeIndex: this.state.firstIndex
-            })
+        this.setState({
+          firstIndex: activeIndex,
+          activeIndex: this.state.lastIndex,
+          lastIndex: newLastIndex,
+        });
+        break;
+      case "prev":
+        let newFirstIndex = this.state.firstIndex - 1;
 
-            break;
-        case "prev":
-            let newLastIndex = this.state.lastIndex + 1;
+        if (newFirstIndex < 0) {
+          newFirstIndex = this.state.casinos.length - 1;
+        }
 
-            if(newLastIndex > this.state.casinos.length - 1){
-                newLastIndex = 0;
-            }
+        this.setState({
+          firstIndex: newFirstIndex,
+          lastIndex: this.state.activeIndex,
+          activeIndex: this.state.firstIndex,
+        });
 
-            this.setState({
-                firstIndex: activeIndex,
-                activeIndex: this.state.lastIndex,
-                lastIndex: newLastIndex
-            })
-            break;
-        default:
-            return
+        break;
+      default:
+        return;
     }
   }
 
@@ -93,7 +93,7 @@ export default class Carousel extends Component {
           <span className="display-4 text-primary carousel-container--arrow__hover">
             <FontAwesomeIcon
               icon={faAngleLeft}
-              onClick={() => this.changeCards("prev") }
+              onClick={() => this.changeCards("prev")}
             />
           </span>
           {this.filterCasinos(firstIndex, lastIndex, activeIndex, casinos).map(
@@ -108,7 +108,7 @@ export default class Carousel extends Component {
           <span className="display-4 text-primary carousel-container--arrow__hover">
             <FontAwesomeIcon
               icon={faAngleRight}
-              onClick={() => this.changeCards("next") }
+              onClick={() => this.changeCards("next")}
             />
           </span>
         </div>

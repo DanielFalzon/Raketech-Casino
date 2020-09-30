@@ -4,7 +4,9 @@ import {Button} from 'react-bootstrap';
 
 export default function CarouselLargeCard(props) {
     return (
-        <div className="carousel-card--large bg-light">
+        <div className="carousel-card--large bg-light"
+            onClick={() => {window.location.href = `/casino-review/${props.casino.id}`}}
+        >
             <img src={props.casino.acf.logo} width="150" alt="casino logo"/>
             <StarRatings
                 rating={parseFloat(props.casino.acf.rating)}
